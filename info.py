@@ -55,6 +55,15 @@ RemoveBG_API = environ.get("RemoveBG_API", "")
 SHORT_URL = environ.get("SHORT_URL")
 SHORT_API = environ.get("SHORT_API")
 
+SESSION_NAME = str(environ.get('SESSION_NAME', 'LazyBot'))
+MULTI_CLIENT = False
+name = str(environ.get('name', 'LazyPrincess'))
+PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
+if 'DYNO' in environ:
+    ON_HEROKU = True
+    APP_NAME = str(getenv('APP_NAME'))
+
+
 # Others
 IMDB_DELET_TIME = int(environ.get('IMDB_DELET_TIME', "300"))
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
